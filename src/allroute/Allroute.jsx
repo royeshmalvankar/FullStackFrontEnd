@@ -5,9 +5,10 @@ import Home from '../components/Home'
 import Login from '../components/login'
 import Register from '../components/signup'
 import Products from '../components/products'
-import UD_products from '../components/UD_product'
 import CreateProduct from '../components/createproduct'
-// import Privateroute from '../components/Privateroute'
+import Productid from '../components/productid'
+import PrivateRoute from '../privateroute/privateroute'
+
 
 const Allroute = () => {
 
@@ -20,10 +21,9 @@ const Allroute = () => {
                 <Route path="/login" element={<Login />} />
                 <Route path="/signup" element={<Register />} />
                 <Route path="/products" element={<Products />} />
-                <Route path="/ud_products/:id" element={<UD_products />} />
-                <Route path="/createproduct" element={<CreateProduct />} />
+                <Route path="/products/:id" element={<Productid />} />
+                <Route path="/createproduct" element={<PrivateRoute><CreateProduct /></PrivateRoute>} />
                 <Route path="*" element={<Home />} />
-                {/* <Route path="/privateroute" element={<Privateroute />} />    */}
             </Routes>
         </>
     )

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 
 const Home = () => {
     let token=localStorage.getItem("token")
+    let role=localStorage.getItem("role")
     return (
         <>
         <div className="home">
@@ -11,9 +12,9 @@ const Home = () => {
             <Link to="/products"><button >Products</button></Link>
             <br />
             <br />
-            <h1>Create Product</h1>
+            {role=="admin"?<><h1>Create Product</h1>
             <br />
-            <Link  to="/createproduct"><button >Create Product</button></Link>
+            <Link  to="/createproduct"><button >Create Product</button></Link></>:null}
             <br />
             <br />
             {token?null:<><h1>Signup</h1>

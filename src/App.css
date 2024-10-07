@@ -84,7 +84,7 @@
   margin-left: 35%;
 }
 .nav2{
-  display: inline;
+  display: flex;
   justify-content: center;
   gap: 30px;
   padding: 10px;

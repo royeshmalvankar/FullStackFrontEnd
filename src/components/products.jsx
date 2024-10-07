@@ -1,15 +1,17 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { AuthContext } from '../authcontext/authcontex'
 import axios from 'axios'
 import Loading from "../loding&error/loding"
 import Error from "../loding&error/error"
-const products = () => {
+import { Link } from 'react-router-dom'
+const Products = () => {
 
-    const {data,setData,isLoding,setLoding,isError,setError} = useContext(AuthContext)
+    const {isLoding,setLoding,isError,setError} = useContext(AuthContext)
+    const [data,setData] = useState([])
 
-    // useEffect(() => {
-    //     getdata()
-    // }, [])
+    useEffect(() => {
+        getdata()
+    },[])
 
     if (isLoding) {
         return <Loading />
@@ -29,25 +31,21 @@ const products = () => {
             setData(response.data.products)
             setLoding(false)
         } catch (error) {
-            console.log(error);
+            console.log('product page',error);
             setError(true)
             setLoding(false)
         }
     }
-    useEffect(() => {
-        getdata()
-    }, [])
+
     return (
         <>
         <div className='products'>
             {data.map((item) => {
                 return (
-                    <div key={item._id} className='product'>
+                    <Link key={item._id} to={`/products/${item._id}`} style={{ textDecoration: "none", color: "black" }}><div  className='product'>
                         <h1>Product Name: {item.name}</h1>
                         <h1>Description: {item.description}</h1>
-                        <h1>Price {item.price}</h1>
-                        <h1>Quantity: {item.quantity}</h1>
-                    </div>
+                    </div></Link>
                 )
             })}
         </div>
@@ -55,4 +53,4 @@ const products = () => {
     )
 }
 
-export default products
+export default Products
