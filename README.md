@@ -177,14 +177,16 @@ Select the repository you want to deploy.
 After selecting your repository, Netlify will ask for build configuration. This step is important if your app requires a build step (for example, React apps using Webpack).
 Build settings to configure:
 <br>
-Build command: This is usually the command used to build your project for production. Common commands:
-For React: npm run build or yarn build
-For Vue: npm run build or yarn build
-For Angular: ng build --prod
-Publish directory: This tells Netlify which folder to publish (i.e., the folder where your static site is generated).
-For React or Vue (default setups): build
-For Angular: dist
-Example configuration for a React app:
+Build command: This is usually the command used to build your project for production.
+<br>
+Common commands:
+For React: npm run build or yarn build </n>
+For Vue: npm run build or yarn build</n>
+For Angular: ng build --prod</n>
+Publish directory: This tells Netlify which folder to publish (i.e., the folder where your static site is generated).</n>
+For React or Vue (default setups): build</n>
+For Angular: dist</n>
+Example configuration for a React app:</n>
 
 Build command: npm run build
 Publish directory: build
