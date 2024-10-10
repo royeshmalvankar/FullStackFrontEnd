@@ -19,6 +19,7 @@ npm start
 This will start the development server, and the app should open automatically in the browser, typically at http://localhost:3000.
 Here’s a detailed explanation of the main component, state management logic, API service integration, and authentication flow in the context of your React-based application:
 
+<h1>CODE STRUCTURE</h1>
 1. Main Component (Root Component)
 The main component typically acts as the entry point of the application, which includes:
 
@@ -169,3 +170,22 @@ const PrivateRoute = ({ children }) => {
   const { token } = useContext(AuthContext);
   return token ? children : <Navigate to="/login" />;
 };
+
+<h1>USAGE INSTRUCTION</h1>
+<h3>1. User Registration Flow</h3>
+The registration flow allows new users to create an account in the application. Here’s how it’s typically handled:
+
+1. User Input: Create a form where the user enters their details (e.g., email, password, confirm password).
+2. POST Request to Backend: When the user submits the form, a POST request is sent to the registration API (/api/register) with the form data.
+3. Backend Validation: The backend validates the input (checking if email is unique, password requirements, etc.).
+4. Success Response: If the registration is successful, the backend returns a success response (optionally, a token).
+5. Navigate to Login: After successful registration, the user is redirected to the login page.
+
+<h3>2. User Login Flow</h3>
+Login flow allows users to authenticate using their credentials and receive a JWT token for future interactions.
+
+1. User Input: A login form where the user enters their email and password.
+2. POST Request to Backend: When submitted, the form sends a POST request to the login API (/api/login).
+3. Receive Token: The backend validates the credentials and, if correct, returns a JWT token.
+4. Token Storage: The frontend stores the token in localStorage or sessionStorage (or Context API for a temporary session).
+5. Access Protected Routes: The token is included in the headers of subsequent API requests to authenticate the user.  
