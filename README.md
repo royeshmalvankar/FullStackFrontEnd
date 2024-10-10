@@ -194,7 +194,7 @@ Publish directory: build
 6. Set Environment Variables (if necessary)
 If your app interacts with a backend API or needs environment variables, you can set them in Netlify.
 
-Go to Site Settings → Build & Deploy → Environment.
+Go to Site Settings → Build & Deploy → Environment.<br/>
 Add any necessary environment variables (e.g., REACT_APP_API_URL, NODE_ENV=production).
 <br>
 7. Deploy Your Site
