@@ -176,7 +176,7 @@ Select the repository you want to deploy.
 5. Configure Build Settings
 After selecting your repository, Netlify will ask for build configuration. This step is important if your app requires a build step (for example, React apps using Webpack).
 Build settings to configure:
-
+<br>
 Build command: This is usually the command used to build your project for production. Common commands:
 For React: npm run build or yarn build
 For Vue: npm run build or yarn build
