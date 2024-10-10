@@ -27,7 +27,7 @@ const Productid = () => {
     const getdata = async () => {
         try {
             setLoding(true)
-            const response = await axios.get(`http://localhost:3001/product/${id}`, {
+            const response = await axios.get(`https://fullstackbackend-dbo0.onrender.com/product/${id}`, {
                 headers: {
                     "Authorization": `Bearer ${localStorage.getItem("token")}`
                 }
@@ -51,7 +51,7 @@ const Productid = () => {
     const updatedata = async () => {     
         try { 
             setLoding(true)
-             await axios.patch(`http://localhost:3001/product/update/${id}`, {
+             await axios.patch(`https://fullstackbackend-dbo0.onrender.com/product/update/${id}`, {
                 name:formstate.name,
                 price:formstate.price,
                 description:formstate.description,
@@ -98,7 +98,7 @@ const Productid = () => {
     const deleteproduct = async () => {
         try {
             setLoding(true)
-            await axios.delete(`http://localhost:3001/product/delete/${id}`, {
+            await axios.delete(`https://fullstackbackend-dbo0.onrender.com/product/delete/${id}`, {
                 headers: {
                     "Authorization": `Bearer ${localStorage.getItem("token")}`
                 }

@@ -17,7 +17,7 @@ const CreateProduct = () => {
         if(isError) return alert("Please fill all the fields")
         e.preventDefault();
         try {
-            await axios.post(`http://localhost:3001/product/add`, { name: name, description: description, quantity: quantity, price: price }, {
+            await axios.post(`https://fullstackbackend-dbo0.onrender.com/product/add`, { name: name, description: description, quantity: quantity, price: price }, {
                 headers: {
                     "Authorization": `Bearer ${localStorage.getItem("token")}`
                 }

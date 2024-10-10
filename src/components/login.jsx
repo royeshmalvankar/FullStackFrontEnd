@@ -17,7 +17,7 @@ const Login = () => {
     const authrole=async(userid)=>{
         console.log(userid);
         
-        const ath = await axios.get(`http://localhost:3001/user/${userid}`,{
+        const ath = await axios.get(`https://fullstackbackend-dbo0.onrender.com/user/${userid}`,{
             headers:{
                 "Authorization": `Bearer ${localStorage.getItem("token")}`
             }
@@ -29,7 +29,7 @@ const Login = () => {
 
     const fetchlogin = async()=>{
         try {
-            let response = await axios.post(`http://localhost:3001/user/login`,{email:logemail,password:logpassword})
+            let response = await axios.post(`https://fullstackbackend-dbo0.onrender.com/user/login`,{email:logemail,password:logpassword})
             let token=response.data.acessToken
             let userid=response.data.userid
             if (token){

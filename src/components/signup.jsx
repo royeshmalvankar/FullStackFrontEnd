@@ -19,7 +19,7 @@ const Register = () => {
 
         e.preventDefault();
         try {
-            let response =  await axios.post(`http://localhost:3001/user/register`,{name,email,password,role})
+            let response =  await axios.post(`https://fullstackbackend-dbo0.onrender.com/user/register`,{name,email,password,role})
             console.log("rp",response)
             alert("Registered Successfully")
             reset()

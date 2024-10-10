@@ -27,7 +27,7 @@ const Navbar =()=>{
     //     }
     // }
     const logout=()=>{
-        axios.get ("http://localhost:3001/user/logout",{
+        axios.get ("https://fullstackbackend-dbo0.onrender.com/user/logout",{
             headers:{
                  "Authorization": `Bearer ${localStorage.getItem("token")}`
             }})
@@ -55,7 +55,7 @@ const Navbar =()=>{
                 </div>
                 <div className="nav2">
                 {localStorage.getItem("token")?<div className="user"><h1>Welcome! {user}</h1><h1 onClick={()=>{logout()}} style={css}>Logout</h1></div>:<Link to="/login" style={css}><h1>Login</h1></Link>}
-                 {localStorage.getItem("token")?null:<Link to="/register" style={css}><h1>Register</h1></Link>}
+                 {localStorage.getItem("token")?null:<Link to="/signup" style={css}><h1>Register</h1></Link>}
                 </div>
             </nav>
         </header>

@@ -23,7 +23,7 @@ const Products = () => {
     const getdata = async () => {
         try {
             setLoding(true)
-            const response = await axios.get("http://localhost:3001/product", {
+            const response = await axios.get("https://fullstackbackend-dbo0.onrender.com/product", {
                 headers: {
                     "Authorization": `Bearer ${localStorage.getItem("token")}`
                 }
