@@ -109,42 +109,50 @@ POST /api/login
 Authenticates a user, validates credentials, and returns a JWT token if valid.
 Request Body: { "email": "user@example.com", "password": "securepassword" }
 Response: { "token": "jwt-token" }
+
+
 2. User CRUD Operations (Authenticated)
 These endpoints typically require a valid JWT token in the Authorization header.
-
+<br>
 GET /api/products
-
+<br>
 Fetches a list of all products (available only to authenticated users).
 Headers: Authorization: Bearer <token>
 Response: [{ "id": 1, "name": "Product A", "price": 100 }, ...]
+<br>
 GET /api/products/:id
-
+<br>
 Fetches the details of a single product by its id.
 Headers: Authorization: Bearer <token>
 Response: { "id": 1, "name": "Product A", "price": 100 }
+<br>
 POST /api/products
-
+<br>
 Creates a new product. The request body contains the product data.
 Headers: Authorization: Bearer <token>
 Request Body: { "name": "New Product", "price": 120 }
 Response: { "id": 2, "name": "New Product", "price": 120 }
+<br>
 PUT /api/products/:id
-
+<br>
 Updates an existing product by its id. The request body contains the updated product data.
 Headers: Authorization: Bearer <token>
 Request Body: { "name": "Updated Product", "price": 150 }
 Response: { "id": 1, "name": "Updated Product", "price": 150 }
+<br>
 DELETE /api/products/:id
-
+<br>
 Deletes a product by its id.
 Headers: Authorization: Bearer <token>
 Response: { "message": "Product deleted successfully" }
 3. Additional Endpoints
+<br>
 POST /api/logout
-
+<br>
 (Optional) Logs out the user by invalidating the token on the client side. No server logic required unless you're using server-side token revocation.
+<br>
 GET /api/user/profile
-
+<br>
 Retrieves the authenticated user's profile information.
 Headers: Authorization: Bearer <token>
 Response: { "id": 1, "email": "user@example.com", "name": "John Doe" }
