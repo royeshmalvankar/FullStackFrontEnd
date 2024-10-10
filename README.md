@@ -188,21 +188,24 @@ Example configuration for a React app:
 
 Build command: npm run build
 Publish directory: build
+<br>
 6. Set Environment Variables (if necessary)
 If your app interacts with a backend API or needs environment variables, you can set them in Netlify.
 
 Go to Site Settings → Build & Deploy → Environment.
 Add any necessary environment variables (e.g., REACT_APP_API_URL, NODE_ENV=production).
+<br>
 7. Deploy Your Site
 Once you've configured the build settings, click on Deploy Site.
 Netlify will pull the code, install dependencies, and run the build process. This will take a few minutes.
+<br>
 8. Custom Domain (Optional)
 After deployment, your site will be live with a randomly assigned Netlify domain (e.g., your-app-name.netlify.app). If you have a custom domain:
 
 Go to Domain Settings in Netlify.
 Add your custom domain or register a new one.
 You can also configure SSL certificates for HTTPS, which Netlify offers for free with Let’s Encrypt.
-
+<br>
 9. Deploy Backend Separately (if applicable)
 Netlify is suitable for front-end hosting, but if your application has a backend API (e.g., Node.js, Python, etc.), you should host it separately on a service like Heroku, AWS, or DigitalOcean.
 
