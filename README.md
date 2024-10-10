@@ -183,7 +183,7 @@ Common commands:
 For React: npm run build or yarn build <br/>
 For Vue: npm run build or yarn build<br/>
 For Angular: ng build --prod<br/>
-Publish directory: This tells Netlify which folder to publish (i.e., the folder where your static site is generated).< br / >
+Publish directory: This tells Netlify which folder to publish (i.e., the folder where your static site is generated).<br/>
 For React or Vue (default setups): build<br/>
 For Angular: dist<br/>
 Example configuration for a React app:<br/>
